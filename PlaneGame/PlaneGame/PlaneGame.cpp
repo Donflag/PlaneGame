@@ -7,6 +7,18 @@
 #include <cstdio>
 #define _CRT_SECURE_NO_WARNINGS		//关闭不安全函数警告
 
+//定义游戏画面尺寸
+#define Canvas_High 700
+#define Width 550
+
+//定义游戏中所出现的图片素材变量等全局变量
+IMAGE background;			//定义背景图片变量
+IMAGE plane1, plane2;		//定义我机图片变量
+IMAGE explode1, explode2;	//定义爆炸图片变量
+IMAGE enemy1, enemy2;		//定义敌机图片变量
+IMAGE bullet1, bullet2;		//定义子弹图片变量
+bool isGameover = false;	//定义游戏结束变量
+int score = 0;				//定义分数记录变量
 
 //抽象我方飞机类(以下简称我机)
 class Plane {
