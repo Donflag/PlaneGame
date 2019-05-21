@@ -56,7 +56,7 @@ public:
 	//子弹自然上升
 	void up() {
 		if (y > -25) {
-			y = y - 2;
+			y = y - 4;
 		}
 	}
 };
@@ -172,7 +172,6 @@ void Show() {
 	}
 	//游戏结束状态
 	else {
-		
 		//显示爆炸飞机
 		putimage(plane.x - 50.0, plane.y - 60.0, &explode1, NOTSRCERASE);
 		putimage(plane.x - 50.0, plane.y - 60.0, &explode2 , SRCINVERT);
@@ -212,13 +211,11 @@ void WithoutInput() {
 				bullet.y = -1000;
 			}
 		}
-
 		//敌机与我机碰撞
 		for (auto i = 0; i < 3; i++) {
-			if (fabs(enemy[i].x - plane.x) + fabs(enemy[i].y - plane.y) < 150) {
-
+			if (fabs(enemy[i].x - plane.x) + fabs(enemy[i].y - plane.y) < 200) {
 				//敌机与我机碰撞，游戏结束
-				isGameover == true;
+				isGameover = true;
 				//GameOver();
 			}
 		}
