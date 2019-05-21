@@ -17,6 +17,18 @@ public:
 	//我机位置
 	double x;
 	double y;
+	void up() {
+		y = y - 2;
+	}
+	void down() {
+		y = y + 2;
+	}
+	void left() {
+		x = x - 2;
+	}
+	void right() {
+		x = x + 2;
+	}
 };
 
 //抽象敌方飞机类(以下简称敌机)
@@ -207,7 +219,7 @@ void WithoutInput() {
 
 				//敌机与我机碰撞，游戏结束
 				isGameover == true;
-				GameOver();
+				//GameOver();
 			}
 		}
 	}
@@ -215,6 +227,31 @@ void WithoutInput() {
 //定义处理与输入有关的数据更新函数
 void WithInput() {
 
+	//正常游戏状态
+	if (isGameover == false) {	
+
+		//鼠标监听输入部分
+
+		//定义鼠标消息
+		MOUSEMSG message;
+		//当鼠标有消息产生时
+		if (MouseHit()) {
+			//获取鼠标产生的消息
+			message = GetMouseMsg();
+			//如果鼠标在移动
+			if (message.uMsg == WM_MOUSEMOVE) {
+				//更新飞机位置为鼠标位置
+				plane.x = message.x;
+				plane.y = message.y;
+			}
+			//如果按下鼠标左键
+			else if (message.uMsg == WM_LBUTTONDOWN) {
+				//更新子弹位置为鼠标位置
+				bullet.x = message.x;
+				bullet.y = message.y;
+			}
+		}		
+	}
 }
 
 //定义处理游戏结束后功能的函数
