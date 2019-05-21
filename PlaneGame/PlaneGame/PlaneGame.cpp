@@ -178,6 +178,10 @@ void Show() {
 	}
 	
 	//推送绘制的批处理
+	outtextxy(Width*0.48, High*0.95, "得分：");
+	char s[5];
+	sprintf_s(s, "%d", score);
+	outtextxy(Width*0.55, High*0.95, s);
 	FlushBatchDraw();
 	Sleep(3);
 }
@@ -281,5 +285,7 @@ void WithInput() {
 
 //定义处理游戏结束后功能的函数
 void GameOver() {
-
+	EndBatchDraw();
+	_getch();
+	closegraph();
 }
