@@ -97,8 +97,8 @@ void Initdata() {
 	plane.y = High * 0.7;
 
 	//初始化子弹位置
-	bullet.x = plane.x;
-	bullet.y = -150;
+	bullet.x = plane.x-8.0;
+	bullet.y = High * 0.7-100.0;
 
 	//初始化敌机位置
 	for (auto i = 0; i < 3; i++) {
@@ -112,17 +112,48 @@ void Initdata() {
 		//其他飞机位置的横坐标随机生成，从坐标根据前一个飞机的位置确定
 		else {
 			enemy[i].x = rand() % Width - 50.0;
-			enemy[i].y = enemy[(i + 2) % 3].y-150.0;
+			enemy[i].y = enemy[(i + 2) % 3].y-170.0;
 		}
 	}
 
-	BeginBatchDraw();		//开始批处理绘制，以处理闪屏现象
+	//开始批处理绘制，以处理闪屏现象
+	BeginBatchDraw();		
 	
 }
 
 //定义展示游戏界面函数
 void Show() {
 
+	//显示背景图片
+	putimage(0, 0, &background);
+
+	//正常游戏状态
+	if (isGameover == false) {
+		//显示我机
+		putimage(plane.x-50.0, plane.y-60.0, &plane1, NOTSRCERASE);
+		putimage(plane.x-50.0, plane.y-60.0, &plane2, SRCINVERT);
+
+		//显示敌机
+		for (int i = 0; i < 3; i++) {
+			putimage(enemy[i].x, enemy[i].y,&enemy1, NOTSRCERASE);
+			putimage(enemy[i].x, enemy[i].y,&enemy2, SRCINVERT);
+		}
+
+		//显示子弹
+		putimage(bullet.x, bullet.y, &bullet1, NOTSRCERASE);
+		putimage(bullet.x, bullet.y, &bullet2, SRCINVERT);
+
+	}
+	//游戏结束状态
+	else {
+		
+		//显示爆炸飞机
+		putimage(plane.x - 50.0, plane.y - 60.0, &explode1, NOTSRCERASE);
+		putimage(plane.x - 50.0, plane.y - 60.0, &explode2 , SRCINVERT);
+	}
+	
+	//推送绘制的批处理
+	FlushBatchDraw();
 }
 
 //定义处理与输入无关的数据更新函数
