@@ -25,6 +25,13 @@ public:
 	//敌机位置
 	double x;
 	double y;
+
+	//敌机自然下落
+	void down() {
+		if (y < High - 25) {
+			y = y + 1;
+		}
+	}
 };
 
 //抽象子弹类(以下简称子弹)
@@ -33,6 +40,13 @@ public:
 	//子弹位置
 	double x;
 	double y;
+
+	//子弹自然上升
+	void up() {
+		if (y > -25) {
+			y = y - 2;
+		}
+	}
 };
 
 //定义游戏中所出现的图片素材变量等全局变量
@@ -134,7 +148,7 @@ void Show() {
 		putimage(plane.x-50.0, plane.y-60.0, &plane2, SRCINVERT);
 
 		//显示敌机
-		for (int i = 0; i < 3; i++) {
+		for (auto i = 0; i < 3; i++) {
 			putimage(enemy[i].x, enemy[i].y,&enemy1, NOTSRCERASE);
 			putimage(enemy[i].x, enemy[i].y,&enemy2, SRCINVERT);
 		}
@@ -154,13 +168,50 @@ void Show() {
 	
 	//推送绘制的批处理
 	FlushBatchDraw();
+	Sleep(3);
 }
 
 //定义处理与输入无关的数据更新函数
 void WithoutInput() {
 
-}
+	//正常游戏状态
+	if (isGameover == false) {
 
+		//敌机自然下落
+		for (auto i = 0; i < 3; i++) {
+			enemy[i].down();
+		}
+
+		//子弹自然上升
+		bullet.up();
+
+		//敌机被击毁后重新生成
+		for (auto i = 0; i < 3; i++) {
+			//检测每个敌机与子弹的距离
+			if (fabs(enemy[i].x - bullet.x) + fabs(enemy[i].y - bullet.y) < 100) {
+				//增加游戏分数
+				score++;
+
+				//随机生成敌机的坐标
+				enemy[i].x = rand() % Width - 50.0;
+				enemy[i].y = enemy[(i + 2) % 3].y - 170.0;
+
+				//暂时隐藏子弹
+				bullet.y = -1000;
+			}
+		}
+
+		//敌机与我机碰撞
+		for (auto i = 0; i < 3; i++) {
+			if (fabs(enemy[i].x - plane.x) + fabs(enemy[i].y - plane.y) < 150) {
+
+				//敌机与我机碰撞，游戏结束
+				isGameover == true;
+				GameOver();
+			}
+		}
+	}
+}
 //定义处理与输入有关的数据更新函数
 void WithInput() {
 

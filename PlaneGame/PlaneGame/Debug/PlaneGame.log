@@ -1,10 +1,11 @@
 ﻿  PlaneGame.cpp
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(133): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(134): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(138): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(139): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(143): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(144): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(151): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(147): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(148): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
 c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(152): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(153): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(157): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(158): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(165): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(166): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(209): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
   PlaneGame.vcxproj -> C:\Users\Administrator\Desktop\PlaneGame\PlaneGame\Debug\PlaneGame.exe
