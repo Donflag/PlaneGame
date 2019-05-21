@@ -18,16 +18,16 @@ public:
 	double x;
 	double y;
 	void up() {
-		y = y - 2;
+		y = y - 20;
 	}
 	void down() {
-		y = y + 2;
+		y = y + 20;
 	}
 	void left() {
-		x = x - 2;
+		x = x - 20;
 	}
 	void right() {
-		x = x + 2;
+		x = x + 20;
 	}
 };
 
@@ -247,7 +247,35 @@ void WithInput() {
 				bullet.x = message.x;
 				bullet.y = message.y;
 			}
-		}		
+		}
+		//键盘监听输入部分
+		
+		//如果键盘有输入
+		char input;
+		if (_kbhit()) {
+			input = _getch();
+			//向上移动
+			if (input == 'W' || input == 'w') {
+				plane.up();
+			}
+			//向下移动
+			else if (input == 'S' || input == 's') {
+				plane.down();
+			}
+			//向左移动
+			else if (input == 'A' || input == 'a') {
+				plane.left();
+			}
+			//向右移动
+			else if (input == 'D' || input == 'd') {
+				plane.right();
+			}
+			//发射子弹
+			else if (input == ' ') {
+				bullet.x = plane.x-15;
+				bullet.y = plane.y-80;
+			}
+		}
 	}
 }
 
