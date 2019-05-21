@@ -7,6 +7,30 @@
 #include <cstdio>
 #define _CRT_SECURE_NO_WARNINGS		//关闭不安全函数警告
 
+
+//抽象我方飞机类(以下简称我机)
+class Plane {
+public :
+	//我机位置
+	float x;
+	float y;
+};
+
+//抽象敌方飞机类(以下简称敌机)
+class Enemy {
+public:
+	//敌机位置
+	float x;
+	float y;
+};
+
+//抽象子弹类(以下简称子弹)
+class Bullet {
+public:
+	//子弹位置
+	float x;
+	float y;
+};
 //所需函数声明
 void Initdata();
 void Show();
