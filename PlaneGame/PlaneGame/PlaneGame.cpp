@@ -7,6 +7,9 @@
 #include <cstdio>
 #define _CRT_SECURE_NO_WARNINGS		//关闭不安全函数警告
 
+//调用windows api,播放音乐时使用
+#pragma comment(lib,"Winmm.lib")
+
 //定义游戏画面尺寸
 #define High 700
 #define Width 550
@@ -83,7 +86,7 @@ void GameOver();
 //游戏主函数
 int main() {
 	Initdata();			//数据初始化
-	while (true)		//正常游戏
+	while (isGameover==0)		//正常游戏
 	{		
 		Show();			//显示游戏画面
 		WithoutInput();	//与用户输入无关的数据更新
@@ -96,6 +99,10 @@ int main() {
 //定义数据初始化函数
 void Initdata() {
 
+	//加载背景音乐
+	mciSendString("open ../source/bgm.mp3 alias bgm",NULL,0,NULL);
+	//背景音乐循环播放
+	mciSendString("play bgm repeat", NULL, 0, NULL);
 	//游戏画布初始化
 	initgraph(Width, High);
 
@@ -206,7 +213,6 @@ void WithoutInput() {
 			if (fabs(enemy[i].x - bullet.x) + fabs(enemy[i].y - bullet.y) < 100) {
 				//增加游戏分数
 				score++;
-
 				//随机生成敌机的坐标
 				enemy[i].x = rand() % Width - 50.0;
 				enemy[i].y = enemy[(i + 2) % 3].y - 170.0;
@@ -220,7 +226,6 @@ void WithoutInput() {
 			if (fabs(enemy[i].x - plane.x) + fabs(enemy[i].y - plane.y) < 200) {
 				//敌机与我机碰撞，游戏结束
 				isGameover = true;
-				//GameOver();
 			}
 		}
 	}
@@ -285,6 +290,9 @@ void WithInput() {
 
 //定义处理游戏结束后功能的函数
 void GameOver() {
+	mciSendString("close bgm", NULL, 0, NULL);
+	putimage(plane.x - 50.0, plane.y - 60.0, &explode1, NOTSRCERASE);
+	putimage(plane.x - 50.0, plane.y - 60.0, &explode2, SRCINVERT);
 	EndBatchDraw();
 	_getch();
 	closegraph();
