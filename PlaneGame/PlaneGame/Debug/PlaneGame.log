@@ -1,14 +1,14 @@
 ﻿  PlaneGame.cpp
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(166): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(162): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(163): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
 c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(167): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(171): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(168): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
 c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(172): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(176): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(177): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(183): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(173): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(179): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(180): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
 c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(184): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(188): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(191): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(294): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(295): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(187): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(289): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\planegame\planegame\planegame\planegame.cpp(290): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
   PlaneGame.vcxproj -> C:\Users\Administrator\Desktop\PlaneGame\PlaneGame\Debug\PlaneGame.exe

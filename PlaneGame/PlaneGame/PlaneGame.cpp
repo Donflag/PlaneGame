@@ -14,12 +14,16 @@
 #define High 700
 #define Width 550
 
-//抽象我方飞机类(以下简称我机)
-class Plane {
+//抽象移动体
+class mover {
 public:
 	//我机位置
 	double x;
 	double y;
+};
+//抽象我方飞机类(以下简称我机)
+class Plane:public mover {
+public:
 	void up() {
 		y = y - 20;
 	}
@@ -35,12 +39,8 @@ public:
 };
 
 //抽象敌方飞机类(以下简称敌机)
-class Enemy {
+class Enemy :public mover {
 public:
-	//敌机位置
-	double x;
-	double y;
-
 	//敌机自然下落
 	void down() {
 		if (y < High - 25) {
@@ -50,12 +50,8 @@ public:
 };
 
 //抽象子弹类(以下简称子弹)
-class Bullet {
+class Bullet :public mover {
 public:
-	//子弹位置
-	double x;
-	double y;
-
 	//子弹自然上升
 	void up() {
 		if (y > -25) {
@@ -235,7 +231,6 @@ void WithInput() {
 
 	//正常游戏状态
 	if (isGameover == false) {	
-
 		//鼠标监听输入部分
 
 		//定义鼠标消息
