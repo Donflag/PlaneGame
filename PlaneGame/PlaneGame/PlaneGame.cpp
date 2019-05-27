@@ -126,7 +126,7 @@ void Initdata() {
 	plane.y = High * 0.7;
 
 	//初始化子弹位置
-	bullet.x = plane.x-8.0;
+	bullet.x = -300;
 	bullet.y = High * 0.7-100.0;
 
 	//初始化敌机位置
@@ -181,10 +181,10 @@ void Show() {
 	}
 	
 	//推送绘制的批处理
-	outtextxy(Width*0.48, High*0.95, "得分：");
+	outtextxy(Width*0.88, 0, "得分：");
 	char s[5];
 	sprintf_s(s, "%d", score);
-	outtextxy(Width*0.55, High*0.95, s);
+	outtextxy(Width*0.95, 0, s);
 	FlushBatchDraw();
 	Sleep(3);
 }
@@ -198,6 +198,9 @@ void WithoutInput() {
 		//敌机自然下落
 		for (auto i = 0; i < 3; i++) {
 			enemy[i].down();
+			if (enemy[i].y >= 650) {
+				isGameover = true;
+			}
 		}
 
 		//子弹自然上升
